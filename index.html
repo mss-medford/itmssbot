@@ -42,19 +42,19 @@
         let ord = document.getElementById("order")
     
         ord.addEventListener("click", function() {
-            let user_name = document.getElementById("user_name").value;
-            let email = document.getElementById("email").value;
-            let department = document.getElementById("department").value;
-            let role = document.getElementById("role").value;
+        let user_name = document.getElementById("user_name").value;
+        let email = document.getElementById("email").value;
+        let department = document.getElementById("department").value;
+        let role = document.getElementById("role").value;
     
-            let data = {
-                user_name: user_name,
-                email: email;
-                department: department;
-                role: role
-                };
-            tg.sendData(JSON.stringify(data));
-            });
+        let data = {
+            user_name: user_name,
+            email: email;
+            department: department;
+            role: role
+            };
+        tg.sendData(JSON.stringify(data));
+        });
 </script>
 </body>
 </html>
