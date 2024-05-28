@@ -44,27 +44,11 @@
         let ord = document.getElementById("order");
 
         ord.addEventListener("click", function() {
-        document.getElementById("error").innerText = "";
         let user = document.getElementById("user_name").value;
         let email = document.getElementById("email").value;
         let department = document.getElementById("department").value;
         let role = document.getElementById("role").value;
-        if(user.length < 10) {
-            document.getElementById("error").innerText = "Заполните имя и фамилию!";
-            return;
-        }
-        if(email.length < 11) {
-            document.getElementById("error").innerText = "Заполните email! Формат aaa@medford.ru";
-            return;
-        }
-        if(department.length == "Отдел не выбран") {
-            document.getElementById("error").innerText = "Вы не выбрали отдел!";
-            return;
-        }
-        if(role.length == "Роль не выбрана") {
-            document.getElementById("error").innerText = "Вы не выбрали роль!";
-            return;
-        }
+        
         let data = {
                 username: user,
                 email: email,
