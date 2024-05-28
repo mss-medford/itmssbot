@@ -13,11 +13,11 @@
     <form id="form">
         <h1>Форма добавления пользователя в amoCRM</h1>
         <p></p>
-        <input id="user_name" type="text" placeholder="Имя и Фамилия" required>
-        <input class="form-control" type="email" placeholder="Почта" id="email" required>
+        <input id="user_name" type="text" placeholder="Имя и Фамилия">
+        <input class="form-control" type="email" placeholder="Почта" id="email">
         <label class="form-control" for="department">Выберите отдел</label>
-        <select class="form-select" id="department" name="department" required>
-            <option selected disabled value="">Отдел не выбран</option>
+        <select class="form-select" id="department" name="department">
+            <option selected>Отдел не выбран</option>
             <option value="sale_msk">ОП МСК</option>
             <option value="sale_ekb">ОП ЕКБ</option>
             <option value="sale_dag">ОП ЮГ</option>
@@ -27,8 +27,8 @@
             <option value="school">ШКОЛА</option>
         </select>
         <label class="form-control" for="role">Выберите роль</label>
-        <select class="form-select" id="role" name="role" required>
-            <option selected disabled value="">Роль не выбрана</option>
+        <select class="form-select" id="role" name="role">
+            <option selected>Роль не выбрана</option>
             <option value="manager">Менеджер</option>
             <option value="engineer">Инженер</option>
             <option value="helper">Помощник</option>
@@ -46,8 +46,24 @@
         ord.addEventListener("click", function() {
         let user = document.getElementById("user_name").value;
         let email = document.getElementById("email").value;
-            let department = document.getElementById("department").value;
-            let role = document.getElementById("role").value;
+        let department = document.getElementById("department").value;
+        let role = document.getElementById("role").value;
+        if(user.length < 10) {
+            document.getElementById("error").innerText = "Заполните имя и фамилию!";
+            return;
+        }
+        if(email.length < 11) {
+            document.getElementById("error").innerText = "Заполните email! Формат aaa@medford.ru";
+            return;
+        }
+        if(department.length == "Отдел не выбран") {
+            document.getElementById("error").innerText = "Вы не выбрали отдел!";
+            return;
+        }
+        if(role.length == "Роль не выбрана") {
+            document.getElementById("error").innerText = "Вы не выбрали роль!";
+            return;
+        }
         let data = {
                 username: user,
                 email: email,
