@@ -44,6 +44,7 @@
         let ord = document.getElementById("order");
 
         ord.addEventListener("click", function() {
+        document.getElementById("error").innerText = "";
         let user = document.getElementById("user_name").value;
         let email = document.getElementById("email").value;
         let department = document.getElementById("department").value;
