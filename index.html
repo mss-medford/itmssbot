@@ -14,7 +14,7 @@
         <h1>Форма обратной связи</h1>
         <p>Сюда можно зашить любые данные, добавить любые поля</p>
         <input type="text" placeholder="Имя и Фамилия" id="user_name">
-        <input type="text" placeholder="Почта" id="email">
+        <input class="form-control" type="text" placeholder="Почта" id="email">
         <label class="form-control" for="department">Выберите отдел</label>
         <select class="form-select" id="department" name="department">
             <option value="sale_msk">ОП МСК</option>
@@ -48,7 +48,7 @@
         let role = document.getElementById("role").value;
     
         let data = {
-            user_name: user_name,
+            user: user_name,
             email: email;
             department: department;
             role: role
